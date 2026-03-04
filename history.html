@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公司历程 - 北京中科赛新智能技术有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-page {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .sidebar {
+            flex: 0 0 280px;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .sidebar h3 {
+            background: #eaeaea;
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+            font-size: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar ul li a {
+            display: block;
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            text-align: center;
+        }
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #0056d6;
+            color: #fff;
+        }
+        .sidebar .contact-block {
+            background: #0056d6;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .sidebar .contact-block a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .content {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+        .breadcrumb {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: #0056d6;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #0056d6;
+        }
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 50%;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+            text-align: left;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #0056d6;
+            border-radius: 50%;
+            top: 5px;
+        }
+        .timeline-item:nth-child(odd)::after {
+            right: -8px;
+        }
+        .timeline-item:nth-child(even)::after {
+            left: -8px;
+        }
+        .timeline-year {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056d6;
+            margin-bottom: 10px;
+        }
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .timeline-content h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .timeline-content p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/SciSense品牌logo02.png" class="logo" alt="公司LOGO">
+        </a>
+        <h1>北京中科赛新智能技术有限公司</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="technology.html">技术中心</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="cases.html">典型案例</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+    </nav>
+
+    <div class="page-banner" style="background-image: url('images/about_banner.png');">
+    </div>
+
+    <div class="container">
+        <div class="about-page">
+            <div class="sidebar">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="about.html">公司介绍</a></li>
+                    <li><a href="history.html" class="active">发展历程</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="honors.html">荣誉资质</a></li>
+                    <li><a href="#">校企合作</a></li>
+                    <li><a href="#">企业合作</a></li>
+                </ul>
+                <div class="contact-block">
+                    <a href="contact.html">联系我们</a>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="breadcrumb">
+                    <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 发展历程
+                </div>
+
+                <h2 style="text-align: center; margin-bottom: 40px; color: #333;">公司发展历程</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">
+                            <h3>公司成立</h3>
+                            <p>北京中科赛新智能技术有限公司正式成立，致力于虚拟建模仿真、地理信息系统、通用人工智能应用等领域的技术研发与服务。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">
+                            <h3>校企合作</h3>
+                            <p>与清华大学、北京航空航天大学、北京理工大学等多所顶尖高校建立校企联合创新中心，开展深度技术合作。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">
+                            <h3>业务拓展</h3>
+                            <p>成功拓展教育、工业、军工等多行业市场，为客户提供数字化、智能化解决方案。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="about.html">公司介绍</a></li>
+                    <li><a href="history.html">公司历程</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="honors.html">荣誉资质</a></li>
+                    <li><a href="#">校企合作</a></li>
+                    <li><a href="#">企业合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="https://www.smartedu.cn/" target="_blank">国家智慧教育公共服务平台</a></li>
+                    <li><a href="http://www.ilab-x.com/" target="_blank">实验空间—国家虚拟仿真实验教学项目共享服务平台</a></li>
+                    <li><a href="https://www.icourse163.org/" target="_blank">云上微实—高校实验教学课程共享服务平台</a></li>
+                    <li><a href="http://www.sf-联盟.org/" target="_blank">虚拟仿真实验教学创新联盟</a></li>
+                    <li><a href="http://sxxzx.sysu.edu.cn/" target="_blank">高等学校国家级实验教学示范中心联席会</a></li>
+                    <li><a href="https://www.caai.cn/" target="_blank">中国人工智能学会</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-contact">
+                <h3>联系地址</h3>
+                <p>地　址：北京市亦庄经济开发区嘉创路5号</p>
+                <p>邮　编：101111</p>
+                <p>邮　箱：20919701@qq.com &nbsp;&nbsp; QQ：20919701</p>
+            </div>
+            <div class="footer-column">
+                <h3>中科赛新微信公众号欢迎您</h3>
+                <div class="footer-qrcodes">
+                    <div class="qrcode-item">
+                        <img src="images/qrcode-gzh.png" alt="官方公众号">
+                        <p>官方公众号</p>
+                    </div>
+                    <div class="qrcode-item">
+                        <img src="images/qrcode-sph.png" alt="官方视频号">
+                        <p>官方视频号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2026 北京中科赛新智能技术有限公司 版权所有</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+    <script src="script.js"></script>
+</body>
+</html>

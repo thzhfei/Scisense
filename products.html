@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - 北京中科赛新智能技术有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .product-layout {
+            display: flex;
+            gap: 30px;
+        }
+        .product-sidebar {
+            flex: 0 0 280px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .product-sidebar h3 {
+            color: #0056d6;
+            border-bottom: 2px solid #0056d6;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .product-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .product-sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .product-sidebar ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .product-sidebar ul li a:hover,
+        .product-sidebar ul li a.active {
+            background: #0056d6;
+            color: #fff;
+        }
+        .product-content {
+            flex: 1;
+        }
+        .product-category {
+            margin-bottom: 50px;
+            display: none;
+        }
+        .product-category.active {
+            display: block;
+        }
+        .product-category h2 {
+            color: #0056d6;
+            border-bottom: 3px solid #0056d6;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .product-card h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .product-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .product-card ul {
+            padding-left: 20px;
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 15px;
+        }
+        .product-card ul li {
+            margin-bottom: 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/SciSense品牌logo02.png" class="logo" alt="公司LOGO">
+        </a>
+        <h1>北京中科赛新智能技术有限公司</h1>
+    </header>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="technology.html">技术中心</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="cases.html">典型案例</a>
+        <a href="about.html">关于我们</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+    <div class="page-banner" style="background-image: url('images/products_banner.png');">
+    </div>
+
+    <div class="container">
+        <div class="product-section">
+            <div class="product-layout">
+                <div class="product-sidebar">
+                    <h3>产品分类</h3>
+                    <ul>
+                        <li><a href="#reconstruction" class="active">三维重建产品</a></li>
+                        <li><a href="#simulation">虚拟仿真产品</a></li>
+                        <li><a href="#ai">人工智能大模型产品</a></li>
+                    </ul>
+                </div>
+                <div class="product-content">
+                    <!-- 三维重建产品 -->
+                    <div class="product-category active" id="reconstruction">
+                        <h2>三维重建产品</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <h3>三维激光扫描仪</h3>
+                        <p>高精度激光扫描设备，支持多种扫描模式，适用于室内外场景快速采集。</p>
+                        <ul>
+                            <li>地面激光扫描</li>
+                            <li>机载激光扫描</li>
+                            <li>移动激光扫描</li>
+                            <li>多平台融合</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>点云处理软件</h3>
+                        <p>专业的点云数据处理平台，提供完整的点云处理工作流。</p>
+                        <ul>
+                            <li>点云去噪滤波</li>
+                            <li>点云配准拼接</li>
+                            <li>点云分割分类</li>
+                            <li>特征提取识别</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>三维重建系统</h3>
+                        <p>基于点云数据的高精度三维模型重建系统，支持纹理映射和多细节层次。</p>
+                        <ul>
+                            <li>网格重建算法</li>
+                            <li>表面重建优化</li>
+                            <li>纹理映射贴图</li>
+                            <li>LOD多细节层次</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>数字孪生平台</h3>
+                        <p>构建高保真数字孪生系统，实现虚实交互与智能决策。</p>
+                        <ul>
+                            <li>场景数字化建模</li>
+                            <li>实时数据映射</li>
+                            <li>虚实交互仿真</li>
+                            <li>智能分析预测</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 虚拟仿真产品 -->
+                    <div class="product-category" id="simulation">
+                        <h2>虚拟仿真产品</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <h3>物理仿真引擎</h3>
+                        <p>高精度物理模拟系统，支持复杂场景的实时仿真计算。</p>
+                        <ul>
+                            <li>流体动力学仿真</li>
+                            <li>刚体柔体动力学</li>
+                            <li>碰撞检测响应</li>
+                            <li>多物理场耦合</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>实时渲染引擎</h3>
+                        <p>基于先进渲染技术，实现高保真、低延迟的实时渲染效果。</p>
+                        <ul>
+                            <li>光线追踪技术</li>
+                            <li>全局光照阴影</li>
+                            <li>材质渲染系统</li>
+                            <li>环境光遮蔽</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>3D建模工具</h3>
+                        <p>提供完整的3D内容创建工具链，支持复杂场景建模与动画制作。</p>
+                        <ul>
+                            <li>参数化建模</li>
+                            <li>程序化内容生成</li>
+                            <li>骨骼动画系统</li>
+                            <li>面部表情捕捉</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>虚拟仿真平台</h3>
+                        <p>支持三维建模、数字孪生、实时渲染，可用于实训、展示、模拟训练。</p>
+                        <ul>
+                            <li>视觉仿真</li>
+                            <li>空间音频</li>
+                            <li>力反馈技术</li>
+                            <li>多感官融合</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 人工智能大模型产品 -->
+                    <div class="product-category" id="ai">
+                        <h2>人工智能大模型产品</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <h3>基础大模型</h3>
+                        <p>自主研发多模态大模型，支持文本、图像、语音等多种输入输出。</p>
+                        <ul>
+                            <li>自然语言处理</li>
+                            <li>计算机视觉</li>
+                            <li>多模态融合</li>
+                            <li>领域专用模型</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>模型优化工具</h3>
+                        <p>通过先进技术优化模型性能，降低部署成本。</p>
+                        <ul>
+                            <li>模型蒸馏技术</li>
+                            <li>模型量化剪枝</li>
+                            <li>推理加速</li>
+                            <li>边缘设备部署</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>训练推理平台</h3>
+                        <p>构建高效的模型训练与推理基础设施，支持大规模并行计算。</p>
+                        <ul>
+                            <li>分布式训练</li>
+                            <li>模型并行流水线</li>
+                            <li>混合精度训练</li>
+                            <li>动态推理优化</li>
+                        </ul>
+                    </div>
+                    <div class="product-card">
+                        <h3>大模型应用一体机</h3>
+                        <p>轻量化AI推理设备，可快速部署在现场，实现实时智能识别与分析。</p>
+                        <ul>
+                            <li>领域知识注入</li>
+                            <li>提示工程</li>
+                            <li>RLHF优化</li>
+                            <li>个性化定制</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 产品分类切换
+        const categoryLinks = document.querySelectorAll('.product-sidebar a');
+        const categories = document.querySelectorAll('.product-category');
+        
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // 更新导航状态
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 显示对应内容
+                categories.forEach(cat => {
+                    cat.classList.remove('active');
+                    if (cat.id === targetId) {
+                        cat.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

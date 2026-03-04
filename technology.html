@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术中心 - 北京中科赛新智能技术有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .technology-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .tech-layout {
+            display: flex;
+            gap: 30px;
+        }
+        .tech-sidebar {
+            flex: 0 0 280px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .tech-sidebar h3 {
+            color: #0056d6;
+            border-bottom: 2px solid #0056d6;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .tech-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tech-sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .tech-sidebar ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .tech-sidebar ul li a:hover,
+        .tech-sidebar ul li a.active {
+            background: #0056d6;
+            color: #fff;
+        }
+        .tech-content {
+            flex: 1;
+        }
+        .tech-category {
+            margin-bottom: 50px;
+            display: none;
+        }
+        .tech-category.active {
+            display: block;
+        }
+        .tech-category h2 {
+            color: #0056d6;
+            border-bottom: 3px solid #0056d6;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .tech-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .tech-card h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .tech-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .tech-card ul {
+            padding-left: 20px;
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 15px;
+        }
+        .tech-card ul li {
+            margin-bottom: 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/SciSense品牌logo02.png" class="logo" alt="公司LOGO">
+        </a>
+        <h1>北京中科赛新智能技术有限公司</h1>
+    </header>
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="technology.html">技术中心</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="cases.html">典型案例</a>
+        <a href="about.html">关于我们</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+
+    <div class="page-banner" style="background-image: url('images/technology_banner.png');">
+        Technology Center 
+        技术中心
+    </div>
+
+    <div class="container">
+        <div class="technology-section">
+            <div class="tech-layout">
+                <div class="tech-sidebar">
+                    <h3>技术分类</h3>
+                    <ul>
+                        <li><a href="#reconstruction">三维激光点云扫描重建</a></li>
+                        <li><a href="#simulation" class="active">虚拟仿真技术</a></li>
+                        <li><a href="#ai">人工智能大模型</a></li>
+                        <li><a href="#fusion">AI+仿真融合</a></li>
+                        <li><a href="#infrastructure">数据与算力基础设施</a></li>
+                        <li><a href="#platform">应用技术平台</a></li>
+                    </ul>
+                </div>
+                <div class="tech-content">
+                    <!-- 虚拟仿真技术 -->
+                    <div class="tech-category active" id="simulation">
+                        <h2>虚拟仿真技术</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>物理引擎与仿真算法</h3>
+                        <p>开发高精度物理模拟系统，支持复杂场景的实时仿真计算。</p>
+                        <ul>
+                            <li>流体动力学仿真</li>
+                            <li>刚体/柔体动力学</li>
+                            <li>碰撞检测与响应</li>
+                            <li>多物理场耦合</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>实时渲染技术</h3>
+                        <p>基于先进渲染引擎，实现高保真、低延迟的实时渲染效果。</p>
+                        <ul>
+                            <li>光线追踪技术</li>
+                            <li>全局光照与阴影</li>
+                            <li>材质渲染系统</li>
+                            <li>环境光遮蔽</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>3D建模与动画</h3>
+                        <p>提供完整的3D内容创建工具链，支持复杂场景建模与动画制作。</p>
+                        <ul>
+                            <li>参数化建模</li>
+                            <li>程序化内容生成</li>
+                            <li>骨骼动画系统</li>
+                            <li>面部表情捕捉</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>多模态仿真</h3>
+                        <p>融合多种感官模态，提供沉浸式仿真体验。</p>
+                        <ul>
+                            <li>视觉仿真</li>
+                            <li>空间音频</li>
+                            <li>力反馈技术</li>
+                            <li>多感官融合</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 人工智能大模型 -->
+                    <div class="tech-category" id="ai">
+                        <h2>人工智能大模型</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>基础大模型研发</h3>
+                        <p>自主研发多模态大模型，支持文本、图像、语音等多种输入输出。</p>
+                        <ul>
+                            <li>自然语言处理模型</li>
+                            <li>计算机视觉模型</li>
+                            <li>多模态融合模型</li>
+                            <li>领域专用模型</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>模型优化与压缩</h3>
+                        <p>通过先进技术优化模型性能，降低部署成本。</p>
+                        <ul>
+                            <li>模型蒸馏技术</li>
+                            <li>模型量化与剪枝</li>
+                            <li>推理加速</li>
+                            <li>边缘设备部署</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>训练与推理框架</h3>
+                        <p>构建高效的模型训练与推理基础设施，支持大规模并行计算。</p>
+                        <ul>
+                            <li>分布式训练系统</li>
+                            <li>模型并行与流水线</li>
+                            <li>混合精度训练</li>
+                            <li>动态推理优化</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>模型微调与适配</h3>
+                        <p>提供灵活的模型适配方案，快速满足行业特定需求。</p>
+                        <ul>
+                            <li>领域知识注入</li>
+                            <li>提示工程</li>
+                            <li>RLHF优化</li>
+                            <li>个性化定制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 三维激光点云扫描重建 -->
+                    <div class="tech-category" id="reconstruction">
+                        <h2>三维激光点云扫描重建</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>激光扫描技术</h3>
+                        <p>采用先进激光扫描设备，实现高精度三维空间数据采集。</p>
+                        <ul>
+                            <li>地面激光扫描</li>
+                            <li>机载激光扫描</li>
+                            <li>移动激光扫描</li>
+                            <li>多平台融合扫描</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>点云数据处理</h3>
+                        <p>提供完整的点云数据处理流程，从原始数据到高质量三维模型。</p>
+                        <ul>
+                            <li>点云去噪与滤波</li>
+                            <li>点云配准与拼接</li>
+                            <li>点云分割与分类</li>
+                            <li>特征提取与识别</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>三维重建技术</h3>
+                        <p>基于点云数据，实现高精度三维模型重建与纹理映射。</p>
+                        <ul>
+                            <li>网格重建算法</li>
+                            <li>表面重建优化</li>
+                            <li>纹理映射与贴图</li>
+                            <li>LOD多细节层次</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>数字孪生应用</h3>
+                        <p>将真实场景数字化，构建高保真数字孪生系统。</p>
+                        <ul>
+                            <li>场景数字化建模</li>
+                            <li>实时数据映射</li>
+                            <li>虚实交互仿真</li>
+                            <li>智能分析与预测</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- AI+仿真融合 -->
+                    <div class="tech-category" id="fusion">
+                        <h2>AI+仿真融合</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>神经渲染</h3>
+                        <p>利用深度学习加速渲染过程，生成逼真场景。</p>
+                        <ul>
+                            <li>神经辐射场</li>
+                            <li>深度学习超分</li>
+                            <li>AI纹理生成</li>
+                            <li>智能光照估计</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>智能体仿真</h3>
+                        <p>基于大模型的智能体行为模拟，实现复杂群体智能。</p>
+                        <ul>
+                            <li>行为决策模型</li>
+                            <li>路径规划算法</li>
+                            <li>群体协同仿真</li>
+                            <li>情感与认知模拟</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>生成式仿真</h3>
+                        <p>使用生成式AI创建虚拟环境和场景，提升仿真效率。</p>
+                        <ul>
+                            <li>场景自动生成</li>
+                            <li>程序化内容生成</li>
+                            <li>风格化场景创建</li>
+                            <li>智能布局优化</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>数字孪生</h3>
+                        <p>构建高保真虚拟映射，实现虚实交互与智能决策。</p>
+                        <ul>
+                            <li>实时数据同步</li>
+                            <li>预测性维护</li>
+                            <li>优化决策支持</li>
+                            <li>远程监控与控制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 数据与算力基础设施 -->
+                    <div class="tech-category" id="infrastructure">
+                        <h2>数据与算力基础设施</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>数据平台</h3>
+                        <p>构建完整的数据生命周期管理体系，支持大规模数据处理。</p>
+                        <ul>
+                            <li>数据采集与标注</li>
+                            <li>数据清洗与预处理</li>
+                            <li>数据存储与管理</li>
+                            <li>数据质量监控</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>算力调度</h3>
+                        <p>优化算力资源分配，提升训练与推理效率。</p>
+                        <ul>
+                            <li>GPU集群管理</li>
+                            <li>任务调度系统</li>
+                            <li>资源自动伸缩</li>
+                            <li>能耗优化管理</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>数据安全与隐私</h3>
+                        <p>保障数据安全，实现隐私保护下的数据价值挖掘。</p>
+                        <ul>
+                            <li>联邦学习</li>
+                            <li>数据脱敏技术</li>
+                            <li>安全多方计算</li>
+                            <li>隐私保护算法</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- 应用技术平台 -->
+                    <div class="tech-category" id="platform">
+                        <h2>应用技术平台</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>开发工具链</h3>
+                        <p>提供完整的开发工具链，降低开发门槛，提升开发效率。</p>
+                        <ul>
+                            <li>低代码/无代码平台</li>
+                            <li>SDK与API接口</li>
+                            <li>可视化开发环境</li>
+                            <li>自动化测试工具</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>可视化工具</h3>
+                        <p>提供直观的可视化工具，简化场景编辑与调试过程。</p>
+                        <ul>
+                            <li>场景编辑器</li>
+                            <li>行为编辑器</li>
+                            <li>调试分析工具</li>
+                            <li>性能监控面板</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>部署与运维</h3>
+                        <p>构建云原生架构，支持灵活部署与高效运维。</p>
+                        <ul>
+                            <li>容器化部署</li>
+                            <li>微服务架构</li>
+                            <li>自动化运维</li>
+                            <li>监控告警系统</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 技术分类切换
+        const categoryLinks = document.querySelectorAll('.tech-sidebar a');
+        const categories = document.querySelectorAll('.tech-category');
+        
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // 更新导航状态
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 显示对应内容
+                categories.forEach(cat => {
+                    cat.classList.remove('active');
+                    if (cat.id === targetId) {
+                        cat.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

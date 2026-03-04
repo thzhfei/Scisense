@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 北京中科赛新智能技术有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 新增：关于我们页面专用样式 */
+        .about-page {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        /* 左侧导航栏 */
+        .sidebar {
+            flex: 0 0 280px;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .sidebar h3 {
+            background: #eaeaea;
+            padding: 15px;
+            margin: 0;
+            text-align: center;
+            font-size: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar ul li a {
+            display: block;
+            padding: 12px 15px;
+            color: #333;
+            text-decoration: none;
+            text-align: center;
+        }
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #0056d6;
+            color: #fff;
+        }
+        .sidebar .contact-block {
+            background: #0056d6;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .sidebar .contact-block a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* 右侧内容区 */
+        .content {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+        .breadcrumb {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: #0056d6;
+        }
+        .about-banner {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .about-banner img {
+            width: 100%;
+            height: auto;
+        }
+        .about-images {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .about-images img {
+            flex: 1;
+            width: 30%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* 公司历程样式 */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0056d6;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #0056d6;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #0056d6;
+        }
+        .timeline-year {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0056d6;
+            margin-bottom: 10px;
+        }
+        .timeline-content {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        /* 企业文化样式 */
+        .culture-section {
+            margin-bottom: 40px;
+        }
+        .culture-section h3 {
+            color: #0056d6;
+            border-bottom: 2px solid #0056d6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .culture-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .culture-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .culture-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* 荣誉资质样式 */
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .honor-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .honor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .honor-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .honor-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 校企合作和企业合作样式 */
+        .cooperation-section {
+            padding: 20px 0;
+        }
+        .cooperation-section h2 {
+            color: #0056d6;
+            border-bottom: 2px solid #0056d6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .cooperation-section .intro {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .logo-item {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* 内容区域显示控制 */
+        .content > div {
+            display: none;
+        }
+        .content > div.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-link">
+        <img src="images/SciSense品牌logo02.png" class="logo" alt="公司LOGO">
+        </a>
+        <h1>北京中科赛新智能技术有限公司</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="technology.html">技术中心</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="cases.html">典型案例</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+    </nav>
+
+    <!-- 页面顶部Banner（和参考图一致） -->
+    <div class="page-banner" style="background-image: url('images/about_banner.png');">
+    </div>
+
+    <div class="container">
+        <div class="about-page">
+            <!-- 左侧导航 -->
+            <div class="sidebar">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#intro" class="active">公司介绍</a></li>
+                    <li><a href="#history">发展历程</a></li>
+                    <li><a href="#culture">企业文化</a></li>
+                    <li><a href="#honors">荣誉资质</a></li>
+                    <li><a href="#school-cooperation">校企合作</a></li>
+                    <li><a href="#enterprise-cooperation">企业合作</a></li>
+                </ul>
+                <div class="contact-block">
+                    <a href="contact.html">联系我们</a>
+                </div>
+            </div>
+
+            <!-- 右侧内容 -->
+            <div class="content">
+                <!-- 公司介绍 -->
+                <div id="intro" class="active">
+                    <div class="breadcrumb">
+                        <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 公司介绍
+                    </div>
+                <!--
+                    <div class="about-banner">
+                        <img src="images/rainier-banner.jpg" alt="公司Banner">
+                    </div>
+               
+                       <div class="about-images">
+                        <img src="images/team1.jpg" alt="团队照片1">
+                        <img src="images/team2.jpg" alt="团队照片2">
+                        <img src="images/office.jpg" alt="办公环境">
+                    </div>
+
+                -->
+                
+                    <div class="about-text">
+                        <p>     北京中科赛新智能技术有限公司是一家专注于虚拟建模仿真、地理信息系统、通用人工智能应用等多个相关领域的高新科技公司。公司依托顶尖科研技术与高校资源，致力于为教育、工业、军工等多行业提供数字化、智能化解决方案。</p>
+                        <p>     公司与清华大学、北京航空航天大学、北京理工大学等多所顶尖高校建立校企联合创新中心，拥有一支由多学科、多领域专业人才组成的研发团队，坚持技术创新，持续为客户提供高品质数字化转型服务。</p>
+                    </div>
+                </div>
+
+                <!-- 发展历程 -->
+                <div id="history">
+                    <div class="breadcrumb">
+                        <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 发展历程
+                    </div>
+
+                    <h2>发展历程</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024年</div>
+                            <div class="timeline-content">
+                                <p>公司正式成立，确立以虚拟仿真、三维重建、人工智能大模型为核心的技术方向，致力于为各行业提供智能化解决方案。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024年</div>
+                            <div class="timeline-content">
+                                <p>与清华大学、北京航空航天大学等多所顶尖高校建立校企联合创新中心，加强产学研合作。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025年</div>
+                            <div class="timeline-content">
+                                <p>推出自主研发的三维激光扫描系统，实现高精度三维重建技术突破，应用于工业检测、智慧城市等领域。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025年</div>
+                            <div class="timeline-content">
+                                <p>发布虚拟仿真平台V1.0，支持三维建模、数字孪生、实时渲染等功能，广泛应用于教育培训、工业仿真等领域。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2026年</div>
+                            <div class="timeline-content">
+                                <p>自主研发的多模态大模型成功上线，支持文本、图像、语音等多种输入输出，为各行业提供智能化服务。</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2026年</div>
+                            <div class="timeline-content">
+                                <p>获得高新技术企业认证，业务范围覆盖教育、工业、医疗、军工等多个领域，成为行业领先的智能化解决方案提供商。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 企业文化 -->
+                <div id="culture">
+                    <div class="breadcrumb">
+                        <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 企业文化
+                    </div>
+
+                    <h2>企业文化</h2>
+                    <div class="culture-section">
+                        <h3>企业愿景</h3>
+                        <div class="culture-grid">
+                            <div class="culture-card">
+                                <h4>成为行业领先</h4>
+                                <p>致力于成为虚拟仿真、三维重建、人工智能大模型领域的领军企业，引领行业发展方向。</p>
+                            </div>
+                            <div class="culture-card">
+                                <h4>技术创新驱动</h4>
+                                <p>以技术创新为核心驱动力，持续投入研发，推动技术突破和应用创新。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="culture-section">
+                        <h3>企业使命</h3>
+                        <div class="culture-grid">
+                            <div class="culture-card">
+                                <h4>赋能行业转型</h4>
+                                <p>通过先进的数字化、智能化技术，助力各行业实现转型升级，提升核心竞争力。</p>
+                            </div>
+                            <div class="culture-card">
+                                <h4>创造客户价值</h4>
+                                <p>以客户需求为导向，提供高品质的产品和服务，为客户创造持续价值。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="culture-section">
+                        <h3>核心价值观</h3>
+                        <div class="culture-grid">
+                            <div class="culture-card">
+                                <h4>创新</h4>
+                                <p>勇于探索，敢于突破，持续创新，引领技术发展。</p>
+                            </div>
+                            <div class="culture-card">
+                                <h4>专业</h4>
+                                <p>专业团队，专业服务，为客户提供专业解决方案。</p>
+                            </div>
+                            <div class="culture-card">
+                                <h4>合作</h4>
+                                <p>开放合作，互利共赢，与合作伙伴共同成长。</p>
+                            </div>
+                            <div class="culture-card">
+                                <h4>诚信</h4>
+                                <p>诚实守信，言行一致，赢得客户和社会的信任。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 荣誉资质 -->
+                <div id="honors">
+                    <div class="breadcrumb">
+                        <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 荣誉资质
+                    </div>
+
+                    <h2>荣誉资质</h2>
+                    <div class="honors-grid">
+                        <div class="honor-card">
+                            <h4>高新技术企业证书</h4>
+                            <p>2026年获得国家高新技术企业认证</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>ISO9001质量管理体系认证</h4>
+                            <p>2025年通过ISO9001质量管理体系认证</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>软件企业认定证书</h4>
+                            <p>2025年获得软件企业认定证书</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>软件著作权</h4>
+                            <p>三维重建系统V1.0软件著作权</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>软件著作权</h4>
+                            <p>虚拟仿真平台V1.0软件著作权</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>软件著作权</h4>
+                            <p>多模态大模型系统V1.0软件著作权</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>发明专利</h4>
+                            <p>一种基于点云数据的三维重建方法</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>发明专利</h4>
+                            <p>一种虚拟仿真场景生成方法及系统</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>行业优秀解决方案奖</h4>
+                            <p>2026年教育信息化优秀解决方案奖</p>
+                        </div>
+                        <div class="honor-card">
+                            <h4>行业创新奖</h4>
+                            <p>2026年虚拟仿真技术创新奖</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 校企合作 -->
+                <div id="school-cooperation">
+                    <div class="breadcrumb">
+                        <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 校企合作
+                    </div>
+                    <div class="cooperation-section">
+                        <h2>校企合作</h2>
+                        <div class="intro">
+                            <p>北京中科赛新智能技术有限公司高度重视产学研合作，与北京市内多所顶尖高校建立了紧密的合作关系，共同开展技术研发、人才培养和项目合作，推动科技创新和成果转化。</p>
+                        </div>
+                        <div class="logo-grid">
+                            <div class="logo-item">
+                                <img src="images/university/tsinghua.png" alt="清华大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/buaa.png" alt="北京航空航天大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bit.png" alt="北京理工大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bupt.png" alt="北京邮电大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bjut.png" alt="北京工业大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bjucm.png" alt="北京中医药大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bnu.png" alt="北京师范大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/ustb.png" alt="北京科技大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bucea.png" alt="北京建筑大学">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/cugb.png" alt="中国地质大学(北京)">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bua.png" alt="北京农学院">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/university/bistu.png" alt="北京信息科技大学">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 企业合作 -->
+                <div id="enterprise-cooperation">
+                    <div class="breadcrumb">
+                        <a href="index.html">首页</a> &gt; <a href="about.html">关于我们</a> &gt; 企业合作
+                    </div>
+                    <div class="cooperation-section">
+                        <h2>企业合作</h2>
+                        <div class="intro">
+                            <p>公司与多家中央央企建立了长期稳定的合作关系，特别是在电力集团和军工企业领域，通过技术创新和优质服务，为合作伙伴提供全面的智能化解决方案。</p>
+                        </div>
+                        <div class="logo-grid">
+                            <div class="logo-item">
+                                <img src="images/enterprise/state_grid.png" alt="国家电网">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/southern_grid.png" alt="南方电网">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/china_datang.png" alt="中国大唐集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/china_huaneng.png" alt="中国华能集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/china_huadian.png" alt="中国华电集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/china_power_investment.png" alt="国家电力投资集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/avic.png" alt="中国航空工业集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/casic.png" alt="中国航天科工集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/casc.png" alt="中国航天科技集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/csgc.png" alt="中国电子科技集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/norinco.png" alt="中国兵器工业集团">
+                            </div>
+                            <div class="logo-item">
+                                <img src="images/enterprise/cssc.png" alt="中国船舶集团">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="about.html">公司介绍</a></li>
+                    <li><a href="#history">发展历程</a></li>
+                    <li><a href="#culture">企业文化</a></li>
+                    <li><a href="#honors">荣誉资质</a></li>
+                    <li><a href="#school-cooperation">校企合作</a></li>
+                    <li><a href="#enterprise-cooperation">企业合作</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="#">国家智慧教育公共服务平台</a></li>
+                    <li><a href="#">实验空间—国家虚拟仿真实验教学项目共享服务平台</a></li>
+                    <li><a href="#">云上微实—高校实验教学课程共享服务平台</a></li>
+                    <li><a href="#">虚拟仿真实验教学创新联盟</a></li>
+                    <li><a href="#">高等学校国家级实验教学示范中心联席会</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-contact">
+                <h3>联系地址</h3>
+                <p>地　址：北京市朝阳区XX路XX号</p>
+                <p>邮　编：100020</p>
+                <p>销售专线：18600525433</p>
+                <p>邮　箱：info@cesin.ai</p>
+            </div>
+            <div class="footer-column">
+                <h3>中科赛新微信公众号</h3>
+                <div class="footer-qrcodes">
+                    <div class="qrcode-item">
+                        <img src="images/qrcode-gzh.png" alt="官方公众号">
+                        <p>官方公众号</p>
+                    </div>
+                    <div class="qrcode-item">
+                        <img src="images/qrcode-sph.png" alt="官方视频号">
+                        <p>官方视频号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2026 北京中科赛新智能技术有限公司 版权所有</p>
+            <p>京ICP备XXXXXXXX号</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+    <script src="script.js"></script>
+    <script>
+        // 关于我们页面导航切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.sidebar ul li a');
+        const contentSections = document.querySelectorAll('.content > div');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // 如果链接是锚点链接，则平滑滚动到对应位置
+                if (targetId && document.getElementById(targetId)) {
+                    // 更新导航状态
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 隐藏所有内容区域
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // 显示目标内容区域
+                    document.getElementById(targetId).classList.add('active');
+                    
+                    // 滚动到页面顶部
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+        });
+    </script>
+</body>
+</html>
