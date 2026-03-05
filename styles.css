@@ -499,6 +499,306 @@ footer {
     margin: 0 5px;
 }
 
+/* ====================
+   移动端响应式样式
+   ==================== */
+
+/* 小屏幕设备 (手机) */
+@media screen and (max-width: 768px) {
+    /* 导航栏优化 */
+    nav {
+        padding: 5px;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+    
+    /* 容器优化 */
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    
+    /* 页面Banner优化 */
+    .page-banner {
+        height: 180px !important;
+        font-size: 28px !important;
+        letter-spacing: 1px;
+    }
+    
+    /* 产品/技术/解决方案/案例页面 - 侧边栏布局优化 */
+    .product-layout,
+    .tech-layout,
+    .solution-layout,
+    .case-layout {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .product-sidebar,
+    .tech-sidebar,
+    .solution-sidebar,
+    .case-sidebar {
+        flex: none;
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .product-sidebar h3,
+    .tech-sidebar h3,
+    .solution-sidebar h3,
+    .case-sidebar h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .product-sidebar ul,
+    .tech-sidebar ul,
+    .solution-sidebar ul,
+    .case-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .product-sidebar ul li,
+    .tech-sidebar ul li,
+    .solution-sidebar ul li,
+    .case-sidebar ul li {
+        margin-bottom: 0;
+        flex: 1 1 calc(50% - 8px);
+        min-width: 120px;
+    }
+    
+    .product-sidebar ul li a,
+    .tech-sidebar ul li a,
+    .solution-sidebar ul li a,
+    .case-sidebar ul li a {
+        padding: 8px 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    /* 卡片网格优化 */
+    .product-grid,
+    .tech-grid,
+    .solution-grid,
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .product-card,
+    .tech-card,
+    .solution-card,
+    .case-card {
+        padding: 15px;
+    }
+    
+    .product-card h3,
+    .tech-card h3,
+    .solution-card h3,
+    .case-card h3 {
+        font-size: 18px;
+    }
+    
+    .product-card p,
+    .tech-card p,
+    .solution-card p,
+    .case-card p {
+        font-size: 14px;
+    }
+    
+    .product-card ul,
+    .tech-card ul,
+    .solution-card ul,
+    .case-card ul {
+        gap: 5px 10px;
+    }
+    
+    .product-card ul li,
+    .tech-card ul li,
+    .solution-card ul li,
+    .case-card ul li {
+        font-size: 13px;
+    }
+    
+    /* 关于我们页面优化 */
+    .about-page {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .sidebar {
+        flex: none;
+        width: 100%;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    /* 联系我们页面优化 */
+    .contact-page {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .map-section,
+    .contact-section {
+        padding: 15px;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    /* 新闻模块优化 */
+    .news-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .news-image-slider {
+        width: 100%;
+        height: 200px;
+    }
+    
+    /* 页脚优化 */
+    .footer-top {
+        padding: 20px 15px;
+        flex-direction: column;
+    }
+    
+    .footer-column {
+        border-right: none !important;
+        border-bottom: 1px dotted #999;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        flex: none;
+        width: 100%;
+        max-width: none;
+        min-width: auto;
+    }
+    
+    .footer-column:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+    }
+    
+    .footer-contact p {
+        font-size: 13px;
+    }
+    
+    .qrcode-item img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .qrcode-item p {
+        font-size: 14px;
+    }
+    
+    /* 业务模块优化 */
+    .business-section {
+        padding: 30px 0;
+    }
+    
+    .business-container {
+        gap: 15px;
+    }
+    
+    .business-item {
+        min-width: 100%;
+        padding: 15px;
+    }
+    
+    .business-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+    
+    .business-item h3 {
+        font-size: 18px;
+    }
+    
+    .business-item p {
+        font-size: 14px;
+    }
+    
+    /* 核心产品/服务优化 */
+    .services-item {
+        flex-direction: column;
+    }
+    
+    .services-item div {
+        margin: 5px 0;
+    }
+    
+    /* 轮播图优化 */
+    .slider {
+        height: 300px;
+    }
+}
+
+/* 超小屏幕设备 (小屏手机) */
+@media screen and (max-width: 480px) {
+    /* 导航栏进一步优化 */
+    nav a {
+        display: inline-block;
+        margin: 3px 5px;
+        font-size: 12px;
+    }
+    
+    /* 页面Banner进一步优化 */
+    .page-banner {
+        height: 150px !important;
+        font-size: 24px !important;
+    }
+    
+    /* 容器进一步优化 */
+    .container {
+        padding: 10px;
+        margin: 5px auto;
+    }
+    
+    /* 卡片进一步优化 */
+    .product-card,
+    .tech-card,
+    .solution-card,
+    .case-card {
+        padding: 12px;
+    }
+    
+    .product-card h3,
+    .tech-card h3,
+    .solution-card h3,
+    .case-card h3 {
+        font-size: 16px;
+    }
+    
+    .product-card p,
+    .tech-card p,
+    .solution-card p,
+    .case-card p {
+        font-size: 13px;
+    }
+    
+    /* 轮播图进一步优化 */
+    .slider {
+        height: 250px;
+    }
+}
+
 /* 回到顶部按钮 */
 .back-to-top {
     position: fixed;
