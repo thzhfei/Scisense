@@ -1,0 +1,251 @@
+/* 新闻详情页专用样式 - news-detail.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* 头部样式 */
+header {
+    background-color: #598ec7;
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header img.logo {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 导航 */
+nav {
+    background-color: #0056d6;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #cce4ff;
+}
+
+/* 1. 新闻主体容器 */
+.container {
+    max-width: 900px;       /* 限制最大宽度，防止在大屏上太宽 */
+    margin: 40px auto;      /* 上下间距40px，左右自动居中 */
+    padding: 40px;          /* 内部留白，让文字不贴边 */
+    background-color: #fff; /* 白色背景 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 轻微的阴影，增加层次感 */
+    border-radius: 4px;     /* 轻微圆角 */
+}
+
+/* 2. 新闻标题 */
+.container h1 {
+    font-size: 28px;        /* 标题字号 */
+    color: #333;            /* 标题颜色 */
+    margin-bottom: 15px;     /* 标题与下方的间距 */
+    text-align: center;     /* 标题居中 */
+    line-height: 1.4;
+    border-bottom: 2px solid #eee; /* 标题下方加一条灰线 */
+    padding-bottom: 20px;    /* 线与标题的间距 */
+}
+
+/* 3. 发布日期信息 */
+.date-info {
+    text-align: center;     /* 居中显示 */
+    color: #999;            /* 灰色字体，弱化显示 */
+    font-size: 14px;        /* 小字号 */
+    margin-bottom: 40px;     /* 与正文的间距 */
+}
+
+/* 4. 正文段落 */
+.container p {
+    font-size: 16px;        /* 正文字号 */
+    line-height: 1.8;       /* 行高，1.8倍行距阅读最舒适 */
+    margin-bottom: 25px;    /* 段落之间的间距 */
+    text-align: justify;    /* 两端对齐，看起来更整齐 */
+    text-indent: 2em;       /* 首行缩进两个字符 */
+}
+
+/* 5. 正文中的小标题（如果有） */
+.container h3 {
+    font-size: 20px;
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-left: 4px solid #007bff; /* 左侧加个蓝色装饰条 */
+    padding-left: 10px;
+}
+
+/* 6. 图片样式（如果新闻里有图片） */
+.container img {
+    max-width: 100%;        /* 图片最大宽度不超过容器 */
+    height: auto;           /* 高度自动 */
+    display: block;         /* 变为块级元素 */
+    margin: 20px auto;      /* 图片上下间距，左右居中 */
+    border-radius: 4px;
+}
+
+
+/* —————————— 👇 新增：参考图样式的页脚（四栏布局） —————————— */
+footer {
+    background-color: #fff;
+    color: #333;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.footer-top {
+    background-color: #d3d3d3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 30px 5%;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;        /* 正文 */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-right: 1px dotted #999;
+    text-align: left;
+}
+
+
+.footer-column:nth-child(1) {
+  flex: 0 0 20%;
+  border-right: 1px dotted #999;
+}
+.footer-column:nth-child(2) {
+  flex: 0 0 25%;
+  border-right: 1px dotted #999;
+}
+.footer-column:nth-child(3) {
+  flex: 0 0 25%;
+  border-right: 1px dotted #999;
+}
+.footer-column:nth-child(4) {
+  flex: 0 0 30%;
+  border-right: none !important;
+}
+
+/* --- 响应式处理 (可选，但在手机上很重要) --- */
+/* 如果屏幕小于 768px (比如手机竖屏)，让它们垂直排列 */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column; /* 改为垂直方向 */
+    }
+    
+    .footer-column {
+        width: 100%; /* 每一列都占满全宽 */
+        border-right: none !important; /* 手机上去掉竖线 */
+        border-bottom: 1px solid #eee; /* 改成横线分隔 */
+        margin-bottom: 20px;
+    }
+}
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    color: #0056d6;
+}
+
+.footer-contact p {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+.footer-qrcodes {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.qrcode-item {
+    margin: 0 10px;
+}
+
+.qrcode-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+}
+
+.qrcode-item p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer-bottom {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 15px 5%;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* 回到顶部按钮 */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #0056d6;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+}
+/* 7. 底部版权信息 */
+.container .footer {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-top: 40px;
+}
